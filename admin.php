@@ -5,7 +5,7 @@
 			$name = mysql_real_escape_string($_POST['name']);
 			$ping = mysql_real_escape_string($_POST['ping']);
 			$pian = mysql_real_escape_string($_POST['pian']);			
-			$con= mysqli_connect("localhost","root","", "japanese");
+			$con= mysqli_connect("localhost","user","password", "dbname");
 			$sql ="INSERT INTO kana (roman,ping,pian) VALUES ('$name','$ping','$pian')";
 			echo $sql;
 			if (!$result=mysqli_query($con, $sql))
@@ -41,12 +41,7 @@
 			?>
 
 			</table>
-<!-- 			<form method="post">
-				<input type="text" name="name" placeholder="name">
-				<input type="text" name="ping" placeholder="ping">
-				<input type="text" name="pian" placeholder="pian">	
-				<input type="submit">							
-			</form> -->
+
 			<?php
 		}
 	}
