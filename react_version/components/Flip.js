@@ -3,16 +3,20 @@ import React from 'react';
 import styles from '../styles.css';
 
 const Flip = ({
-	frontText,
-	backText
+	card,
+	currentKana,
+	elementStatus,
+	flipCard
 }) =>
-	<div className={styles.flip}>
-		<div className={styles.card}>
+	<div
+		onClick={e => flipCard(card)}
+		className={styles.flip}>
+		<div className={`${styles.card} ${elementStatus[`${card}Flipped`] ? styles.flipped : ''}`}>
 			<div className={`${styles.face} ${styles.front}`}>
-				{frontText}
+				{card.toUpperCase()}
 			</div>
 			<div className={`${styles.face} ${styles.back}`}>
-				{backText}
+				{currentKana && currentKana[card]}
 			</div>
 		</div>
 	</div>;

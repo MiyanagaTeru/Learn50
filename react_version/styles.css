@@ -47,7 +47,7 @@ body {
 	font-size: 150px;
 }
 
-#choice button {
+.choice button {
 	border-radius:3px;
 	border:1px solid #ccc;
 	display:inline-block;
@@ -59,16 +59,16 @@ body {
 	text-decoration:none;
 }
 
-#choice button:active {
+.choice button:active {
 	position:relative;
 	top:1px;
 }
 
-#yes{
+.yes{
 	color:white;
 	background-color:black;
 }
-#no{
+.no{
 	color:black;
 	background-color:white;
 }

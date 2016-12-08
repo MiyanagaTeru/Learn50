@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import kanas from './kanas';
-import currentKana from './currentKana';
+import elementStatus from './elementStatus';
 
 const reducers = combineReducers({
 	kanas,
-	currentKana
+	elementStatus
 })
 
 export default reducers;

@@ -8,22 +8,52 @@ import styles from '../styles.css';
 import Flip from '../components/Flip';
 
 const Main = ({
-	currentKana
+	kanas,
+	currentKana,
+	elementStatus,
+	flipCard,
+	removeKana,
+	getOneKana
 }) =>
-	<div>
-		<Flip frontText='Romaji' backText={currentKana.romaji}/>
-		<Flip frontText='Hiragana' backText={currentKana.hiragana}/>
-		<Flip frontText='Katakana' backText={currentKana.katakana}/>
-		<div id="choice" hidden>
-			<button id="yes">Got it</button>
-			<button id="no">No</button>
+	kanas.length > 0 ?
+		<div>
+			<Flip card='romaji' currentKana={currentKana} flipCard={flipCard} elementStatus={elementStatus}/>
+			<Flip card='hiragana' currentKana={currentKana} flipCard={flipCard} elementStatus={elementStatus}/>
+			<Flip card='katakana' currentKana={currentKana} flipCard={flipCard} elementStatus={elementStatus}/>
+			<div className={styles.choice} hidden={!(elementStatus.romajiFlipped && elementStatus.hiraganaFlipped && elementStatus.katakanaFlipped)}>
+				<button
+					onClick={e => {
+						removeKana(currentKana.id);
+						flipCard('romaji');
+						flipCard('hiragana');
+						flipCard('katakana');
+						setTimeout(() => getOneKana(), 500);
+					}}
+					className={styles.yes}>
+					Got it
+				</button>
+				<button
+					onClick={e => {
+						flipCard('romaji');
+						flipCard('hiragana');
+						flipCard('katakana');
+						setTimeout(() => getOneKana(), 500);
+					}}
+					className={styles.no}>
+					No
+				</button>
+			</div>
 		</div>
-	</div>
+	:
+		<div hidden={kanas.length > 0}>
+			Congrats, you have learned all kanas!
+		</div>
 
 
 const mapStateToProps = state => ({
 	kanas: state.kanas,
-	currentKana: state.currentKana
+	currentKana: state.kanas.find(kana => kana.current),
+	elementStatus: state.elementStatus
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(actions, dispatch);

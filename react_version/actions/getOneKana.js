@@ -1,6 +1,5 @@
 const getOnekana = kanas => ({
-	type: 'GET_ONE_KANA',
-	kanas
+	type: 'GET_ONE_KANA'
 });
 
 export default getOnekana;
