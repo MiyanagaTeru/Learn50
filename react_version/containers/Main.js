@@ -21,9 +21,11 @@ class Main extends React.PureComponent {
 
 		return kanas.length > 0 ?
 			<div>
-				<Flip card='romaji' currentKana={currentKana} flipCard={flipCard} elementStatus={elementStatus}/>
-				<Flip card='hiragana' currentKana={currentKana} flipCard={flipCard} elementStatus={elementStatus}/>
-				<Flip card='katakana' currentKana={currentKana} flipCard={flipCard} elementStatus={elementStatus}/>
+				<div className={styles.cards}>
+					<Flip card='romaji' currentKana={currentKana} flipCard={flipCard} elementStatus={elementStatus}/>
+					<Flip card='hiragana' currentKana={currentKana} flipCard={flipCard} elementStatus={elementStatus}/>
+					<Flip card='katakana' currentKana={currentKana} flipCard={flipCard} elementStatus={elementStatus}/>
+				</div>
 				<div className={`${styles.choice} ${!(elementStatus.romajiFlipped && elementStatus.hiraganaFlipped && elementStatus.katakanaFlipped) ? styles.hidden : ''}`}>
 					<button
 						onClick={e => {
@@ -52,7 +54,7 @@ class Main extends React.PureComponent {
 				<div className={styles.canvasWrapper}>
 					<CanvasDraw
 						canvasWidth={window && window.innerWidth * 0.9}
-						canvasHeight={window && window.innerHeight - 450}
+						canvasHeight={window && window.innerHeight - window.innerWidth * 0.65}
 						ref={canvasDraw => (this.canvas = canvasDraw)}
 					/>
 				</div>

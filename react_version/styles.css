@@ -1,14 +1,20 @@
 body {
 	background: #ccc;
 	text-align: center;
+	margin: 1vw;
 }
+.cards {
+	display: flex;
+	justify-content: space-between;
+}
+
 .flip {
 	display: inline-block;
 	-webkit-perspective: 800;
-	width: 30%;
-	height: 300px;
+	width: 32vw;
+	height: 32vw;
 	position: relative;
-	margin: 20px 1%;
+	margin: 4vw 0;
 }
 .flip .card.flipped {
 	-webkit-transform: rotatex(-180deg);
@@ -28,7 +34,7 @@ body {
 	font-family: Georgia;
 
 	text-align: center;
-	line-height: 300px;
+	line-height: 32vw;
 }
 .flip .card .front {
 	position: absolute;
@@ -36,7 +42,7 @@ body {
 	background: black;
 	color: white;
 	cursor: pointer;
-	font-size: 40px;
+	font-size: 4vw;
 }
 .flip .card .back {
 	-webkit-transform: rotatex(-180deg);
@@ -44,11 +50,11 @@ body {
 	background: white;
 	color: black;
 	cursor: pointer;
-	font-size: 150px;
+	font-size: 20vw;
 }
 
 .choice {
-	height: 55px;
+	height: 12vw;
 }
 
 .choice.hidden {
@@ -57,30 +63,25 @@ body {
 
 .choice button {
 	border-radius:3px;
-	border:1px solid #ccc;
-	display:inline-block;
-	cursor:pointer;
+	border: 1px solid #ccc;
+	display: inline-block;
+	cursor: pointer;
 	font-family:arial;
-	font-size:18px;
-	font-weight:bold;
-	padding:14px 32px;
-	text-decoration:none;
-}
-
-.choice button:active {
-	position:relative;
-	top:1px;
+	font-size: 4vw;
+	font-weight: bold;
+	padding: 3vw 6vw;
+	text-decoration: none;
 }
 
 .yes{
 	color:white;
-	background-color:black;
+	background-color: black;
 }
 .no{
 	color:black;
-	background-color:white;
+	background-color: white;
 }
 
 .canvasWrapper canvas {
-	margin: 10px auto;
+	margin: 4vw auto;
 }
