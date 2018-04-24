@@ -7,7 +7,7 @@ var fs = require('fs')
 var bodyParser = require('body-parser')
 
 const app = new express()
-const port = 3000
+const port = 3002
 
 var compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))

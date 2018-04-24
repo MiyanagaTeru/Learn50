@@ -5,10 +5,10 @@ body {
 .flip {
 	display: inline-block;
 	-webkit-perspective: 800;
-	width: 300px;
+	width: 30%;
 	height: 300px;
 	position: relative;
-	margin: 20px 50px;
+	margin: 20px 1%;
 }
 .flip .card.flipped {
 	-webkit-transform: rotatex(-180deg);
@@ -47,6 +47,14 @@ body {
 	font-size: 150px;
 }
 
+.choice {
+	height: 55px;
+}
+
+.choice.hidden {
+	visibility: hidden;
+}
+
 .choice button {
 	border-radius:3px;
 	border:1px solid #ccc;
@@ -71,4 +79,8 @@ body {
 .no{
 	color:black;
 	background-color:white;
+}
+
+.canvasWrapper canvas {
+	margin: 10px auto;
 }
